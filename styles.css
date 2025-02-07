@@ -6,6 +6,7 @@ body {
     padding-top: 75px;
     padding-left: 95px;
     /* background-image: url('images/background.jpg'); */
+    background-color: rgb(240, 225, 225);
 }
 
 img {
@@ -27,11 +28,12 @@ img {
     left: 0;
     right: 0;
 
-    background-color: white;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: rgb(228, 228, 228);
-    box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+
+    background-image: url('images/header_bg.jpg');
 }
 
 .siderbar {
@@ -46,10 +48,12 @@ img {
     padding-top: 90px;
     width: 95px;
 
-    background-color: white;
     border-right-width: 1px;
     border-right-style: solid;
     border-right-color: rgba(228, 228, 228, 0.5);
+
+    background-color: rgb(250, 230, 230);
+    border-right: 1px solid rgb(230, 210, 210);
 }
 
 .sidebar_link {

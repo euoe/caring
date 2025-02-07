@@ -38,11 +38,11 @@
             width: 100%;
             aspect-ratio: 1.7821782;
             object-fit: cover;
-            object-position: left top;
+            object-position: center;
         }
 
         .video-title {
-            margin-top: 8px;
+            margin-top: 5px;
             font-size: 14px;
             font-weight: 500;
             width: 100%;
@@ -84,11 +84,18 @@
         .video-card {
             padding: 4px;
             vertical-align: top;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-info {
+            margin-left: 5px;
+            margin-right: 5px;
         }
 
         .video-info-grid {
             display: grid;
-            grid-template-columns: 48px 1fr;
+            grid-template-columns: 1fr;
         }
 
         .channel-profile-pic img {
@@ -158,7 +165,9 @@
         <section class="video-grid"></section>
     </main>
 
-    <script src="load_viedo.js"></script>
+
+
+    <script type="module" src="load_viedo.js"></script>
 
 </body>
 </html>
