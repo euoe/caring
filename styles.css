@@ -63,6 +63,8 @@ img {
     align-items: center;
     /* background-color: pink; */
     height: 90px;
+    text-decoration: none;
+    color: rgb(20, 20, 20);
 }
 .sidebar_link:hover {
     background-color: rgba(0, 0, 0, 0.05);
@@ -110,6 +112,19 @@ img {
     margin-left: 20px;
     margin-right: 20px;
     opacity: 0.5;
+    border: 1px solid transparent;
+}
+.img_hamburger:hover {
+    opacity: 0.4;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(230, 210, 210);
+    cursor: pointer;
+}
+.img_hamburger:active {
+    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgb(230, 210, 210);
+    cursor: pointer;
 }
 
 .img_logo {
@@ -128,10 +143,13 @@ img {
     border-color: rgba(128, 128, 128, 0.4);
     border-radius: 2px;
     box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .search_bar::placeholder {
     opacity: 0.8;
+}
+.search_bar:hover {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .bu_search {
@@ -147,11 +165,17 @@ img {
     /* box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.1); */
     margin-left: -1px;
 }
+.bu_search:hover {
+    background-color: rgba(133, 133, 133, 0.2);
+}
+.bu_search:active {
+    background-color: rgba(133, 133, 133, 0.3);
+}
 
 .bu_facebook {
-    height: 40px;
-    width: 40px;
-    padding: 0px;
+    height: 55px;
+    width: 55px;
+    padding: 5px;
     border-width: 1px;
     border-style: solid;
     border-color: rgba(128, 128, 128, 0.4);

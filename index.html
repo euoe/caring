@@ -17,7 +17,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 8px;
-            row-gap: 22px;
+            row-gap: 10px;
             padding: 20px;
         }
 
@@ -39,6 +39,7 @@
             aspect-ratio: 1.7821782;
             object-fit: cover;
             object-position: center;
+            cursor: pointer;
         }
 
         .video-title {
@@ -88,6 +89,9 @@
             background-color: rgba(255, 255, 255, 0.6);
             box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
         }
+        .video-card:hover {
+            background-color: rgba(255, 255, 255, 1.0);
+        }
 
         .video-info {
             margin-left: 5px;
@@ -122,7 +126,61 @@
             border-radius: 2px;
             font-weight: 500;
         }
+
+
+        .video-grid-buttons {
+            display: flex;
+            column-gap: 8px;
+            justify-content: center;
+        }
+
+        .page-button {
+            width: 200px;
+            height: 60px;
+            font-size: 120%;
+        }
+
+        .iframe-div {
+            z-index: 5;
+            margin: 8px;
+            position: fixed;
+        }
+        .iframe-main {
+            height: 100%;
+            width: 100%;
+        }
+
     </style>
+
+    <script>
+        function imageClick(s) {
+            print('imageClick', s);
+
+            selector('.iframe-div').innerHTML = `
+                <iframe class="iframe-main" src="https://www.youtube.com/embed/${s}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <button class="close-button" onclick="fnClose()">
+                    <img class="imgClose" src="images/icon_close.png">
+                </button>
+            `;
+            var win = window,
+            docElem = document.documentElement,
+            body = doc.getElementsByTagName('body')[0],
+            x = win.innerWidth || docElem.clientWidth || body.clientWidth;
+            x -= selector('.siderbar').offsetWidth + 28;
+            selector('.iframe-main').style.width = `${x}px`;
+            selector('.iframe-main').style.height = `${x * 0.5625}px`;
+
+            const closebuttonStyle = selector('.close-button').style;
+            closebuttonStyle.height = '70px';
+            closebuttonStyle.width = '70px';
+            closebuttonStyle.paddingInline = '0px';
+            closebuttonStyle.cursor = 'pointer';
+        }
+
+        function fnClose() {
+            selector('.iframe-div').innerHTML = '';
+        }
+    </script>
 
 </head>
 <body>
@@ -143,32 +201,49 @@
 
         <div class="section_R">
             <button class="bu_facebook">
-                <img src="images/icon_facebook.webp">
+                <a href="https://www.youtube.com/@caringangels/videos" target="_blank">
+                    <img src="images/icon_youtube.png">
+                </a>
+            </button>
+            <button class="bu_facebook">
+                <a href="https://www.facebook.com/share/18LTW3cQAD/?mibextid=wwXIfr" target="_blank">
+                    <img src="images/icon_facebook.webp">
+                </a>
             </button>
         </div>
-
     </header>
 
 
     <nav class="siderbar">
-        <div class="sidebar_link">
+        <a class="sidebar_link" href="/">
             <img src="images/icon_home.png">
             <div>Home</div>
-        </div>
-        <div class="sidebar_link">
+        </a>
+        <a class="sidebar_link" href="/about">
             <img src="images/icon_about.png">
-            <div>About</div>            
-        </div>
+            <div>About</div>
+        </a>
+        <a class="sidebar_link" href="/contact">
+            <img src="images/icon_contact.png">
+            <div>Contact</div>
+        </a>
     </nav>
 
 
     <main>
+        <div class="iframe-div"></div>
+
         <section class="video-grid"></section>
+        <section class="video-grid-buttons">
+            <button class="page-button prevpage-button">< Previous Page</button>
+            <button class="page-button nextpage-button">Next Page ></button>
+        </section>
     </main>
 
 
-
-    <script type="module" src="load_viedo.js"></script>
+    <script type="module" src="js/load_viedo.js"></script>
+    <script type="module" src="js/buttons.js"></script>
+    <script src="../js/button_hamburger.js"></script>
 
 </body>
 </html>
