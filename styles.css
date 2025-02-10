@@ -103,7 +103,7 @@ button:hover {
     /* background-color: lightblue; */
     display: flex;
     align-items: center;
-    width: 250px;
+    /* width: 250px; */
     padding: 10px;
     justify-content: right;
     flex-shrink: 0;

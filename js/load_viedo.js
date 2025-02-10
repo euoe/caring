@@ -1,7 +1,10 @@
 import * as youtubeData from '../data/youtube.js';
 import * as videoData from '../data/video.js';
 
-print('loading');
+print('loading', screen.width, window.innerWidth, doc.body.clientWidth, window.devicePixelRatio || 1);
+// if (F > 1.01) {
+//     selector(page_container).style.width = `${F * (screen.width - 95)}px`;
+// }
 
 // const VideoData = videoData.VideoData
 // const videos = videoData.videos
@@ -135,6 +138,11 @@ function append_video(thumbnail, videoId, videoTitle, videoDate, duration) {
     </div>
     `;
 }
+function fix_button() {
+    if (F < 1.01) return;
+
+    byID('div_01').style.width = `${F * (screen.width - 43)}px`;
+}
 
 
 function convertISO8601ToReadableFormat(duration) {
@@ -165,6 +173,7 @@ function renderVideos(videos48, sort=true) {
             formatDuration(e.duration)
         );
     });
+    fix_button();
 
     if (currentPage > 0) {
         selector('.prevpage-button').disabled = false;
