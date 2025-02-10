@@ -70,6 +70,7 @@
 
         .video-stats {
             margin-top: 4px;
+            font-size: 12px;
         }
 
         .channel-link {
@@ -159,7 +160,7 @@
             selector('.iframe-div').innerHTML = `
                 <iframe class="iframe-main" src="https://www.youtube.com/embed/${s}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <button class="close-button" onclick="fnClose()">
-                    <img class="imgClose" src="images/icon_close.png">
+                    <img class="imgClose" src="images/icon_close.png" alt="">
                 </button>
             `;
             var win = window,
@@ -195,21 +196,17 @@
 
         <div class="section_M">
             <input class="search_bar" type="text" placeholder="Search">
-            <button class="bu_search">
+            <button class="bu_search" title="bu_search">
                 <img src="images/search.svg">
             </button>
         </div>
 
         <div class="section_R">
-            <button class="bu_facebook">
-                <a href="https://www.youtube.com/@caringangels/videos" target="_blank">
-                    <img src="images/icon_youtube.png">
-                </a>
+            <button class="bu_facebook" title="bu_youtube" onclick="window.open('https://www.youtube.com/@caringangels/videos', '_blank')">
+                <img src="images/icon_youtube.png">
             </button>
-            <button class="bu_facebook">
-                <a href="https://www.facebook.com/share/18LTW3cQAD/?mibextid=wwXIfr" target="_blank">
-                    <img src="images/icon_facebook.webp">
-                </a>
+            <button class="bu_facebook" title="bu_facebook" onclick="window.open('https://www.facebook.com/share/18LTW3cQAD/?mibextid=wwXIfr', '_blank')">
+                <img src="images/icon_facebook.webp">
             </button>
         </div>
     </header>

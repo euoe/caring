@@ -13,7 +13,9 @@ img {
     height: 100%;
 }
 
-
+button:hover {
+    cursor: pointer;
+}
 
 
 .head {
