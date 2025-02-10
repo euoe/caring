@@ -6,10 +6,9 @@ print('loading');
 // const VideoData = videoData.VideoData
 // const videos = videoData.videos
 const videoGrid = selector('.video-grid');
-import videosAll from '../data/video.json' with {type: "json"};
 
 const num48 = 48;
-var videos = videosAll;
+var videosAll = videos;
 var currentPage = 0;
 var maxPage = Math.floor(videos.length / num48);
 print(videosAll.length);
