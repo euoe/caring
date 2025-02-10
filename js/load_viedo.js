@@ -139,21 +139,21 @@ function append_video(thumbnail, videoId, videoTitle, videoDate, duration) {
     `;
 }
 function fix_button() {
-    var videoStats = document.querySelectorAll(".video-stats");
+    if (! isDesktopMode()) return
 
     var titleSize = parseInt(window.getComputedStyle(selector(".video-title")).getPropertyValue("font-size"), 10);
-    var statsSize = parseInt(window.getComputedStyle(selector(".video-stats")).getPropertyValue("font-size"), 10);
-    if (titleSize >= statsSize) return
-
     var s = `${titleSize}px`;
-    for (var i = 0; i < videoTitle.length; i++) {
-        videoStats[i].style.fontSize = s;
-    }
+    var videoStats = document.querySelectorAll(".video-stats");
+
+    // for (var i = 0; i < videoTitle.length; i++) {
+    //     videoStats[i].style.fontSize = s;
+    // }
     videoGrid.innerHTML = '';
 
     if (F < 1.01) return;
 
-    byID('div_01').style.width = `${screen.width - 43}px`;
+    // byID('div_01').style.width = `${screen.width - 43}px`;
+    byID('div_01').style.width = '100vh';
 }
 
 
