@@ -126,11 +126,10 @@ function append_video(thumbnail, videoId, videoTitle, videoDate, duration) {
                 <p class="video-title">
                     ${videoTitle}
                 </p>
-                <p class="channel-name">
-                </p>
-                <p class="video-stats">
+
+                <div class="video-stats">
                     ${videoDate}
-                </p>
+                </div>
             </div>
         </div>
     </div>
