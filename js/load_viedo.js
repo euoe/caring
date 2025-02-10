@@ -138,23 +138,6 @@ function append_video(thumbnail, videoId, videoTitle, videoDate, duration) {
     </div>
     `;
 }
-function fix_button() {
-    if (! isDesktopMode()) return
-
-    var titleSize = parseInt(window.getComputedStyle(selector(".video-title")).getPropertyValue("font-size"), 10);
-    var s = `${titleSize}px`;
-    var videoStats = document.querySelectorAll(".video-stats");
-
-    // for (var i = 0; i < videoTitle.length; i++) {
-    //     videoStats[i].style.fontSize = s;
-    // }
-    videoGrid.innerHTML = '';
-
-    if (F < 1.01) return;
-
-    // byID('div_01').style.width = `${screen.width - 43}px`;
-    byID('div_01').style.width = '100vh';
-}
 
 
 function convertISO8601ToReadableFormat(duration) {
@@ -185,7 +168,7 @@ function renderVideos(videos48, sort=true) {
             formatDuration(e.duration)
         );
     });
-    fix_button();
+    // fix_button();
 
     if (currentPage > 0) {
         selector('.prevpage-button').disabled = false;
