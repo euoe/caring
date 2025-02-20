@@ -19,15 +19,22 @@
         }
 
         .map-con {
+            height: 100cap;
             margin: 21px;
             display: flex;
             flex-direction: row;
-            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.4);
             /* justify-content: unset; */
         }
 
         .img-map {
             width: 100%;
+        }
+
+        .googlemap {
+            width: 100%;
+            margin: 5px;
+            border-style: none;
         }
 
         h3 {
@@ -97,7 +104,8 @@
             香港新界西貢西貢大街14號2樓
         </div>
         <div class="map-con">
-            <img class="img-map" src="../images/img_map.png">
+            <!-- <img class="img-map" src="../images/img_map.png"> -->
+            <iframe class="googlemap" load="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:EicyNCBTYWkgS3VuZyBUYWkgU3QsIFNhaSBLdW5nLCBIb25nIEtvbmciMBIuChQKEgkV89lMvAUENBEaNDg5dRYUhxAYKhQKEgnBUquzvQUENBFgL7zkVWmzFg&key=AIzaSyBQdG6Gyg_I-6cXHuvNNj9CDCrgLbmU4Io"></iframe>
         </div>
     </main>
 
